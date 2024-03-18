@@ -33,16 +33,21 @@ public class Database_Manager {
     }
 
 
-    public void toPost(String query){
+    public void toPost(String query, String[] params) {
         try {
-            Statement state=connect.createStatement();
-            int righe=state.executeUpdate(query);
+            PreparedStatement statement = connect.prepareStatement(query);
+            
+            for (int i = 0; i < params.length; i++)
+                statement.setString(i + 1, params[i]);
+            
+            int righe = statement.executeUpdate();
             System.out.println("Query eseguita con successo. Righe modificate: " + righe);
-        } catch (Exception ex) {
-            System.out.println("Errore : "+ ex);
+        } catch (SQLException ex) {
+            System.out.println("Errore : " + ex);
             System.exit(1);
         }
     }
+
 
     public ResultSet toGet(String query){
         ResultSet result=null;

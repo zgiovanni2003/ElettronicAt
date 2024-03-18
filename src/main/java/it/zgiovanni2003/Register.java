@@ -12,12 +12,18 @@ import javax.servlet.http.HttpServletResponse;
 
 public class Register extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+    String driver="com.mysql.cj.jdbc.Driver";
+    String URL_mioDB="jdbc:mysql://localhost:3306/e-commerce";
+    Database_Manager db = new Database_Manager(URL_mioDB, driver);
+    
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public Register() {
         super();
+        db.connectDriver();
+        db.connect_DB("root", "");
         // TODO Auto-generated constructor stub
     }
 	/**
@@ -37,20 +43,24 @@ public class Register extends HttpServlet {
 		String born_date= request.getParameter("born-date");
 		String name= request.getParameter("name");
 		String surname= request.getParameter("surname");
-		
+		Password_Manager pm = new Password_Manager();		
 		String pswHash = null;
 		try {
-			pswHash = Password_Manager.encrypt(password);
+			pswHash = pm.encrypt(password);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		String hash=pm.getKey();
 		
+		String query = "INSERT INTO `utente` (`name`, `surname`, `email`, `password`, `hash`, `born-date`)"
+						+ " VALUES (?, ?, ?, ?, ?, ?)";
 		
-		//System.out.println(pswHash);
+		String[] params= {name,surname,email,pswHash,hash,born_date};
 		
+		db.toPost(query, params);
 		
-		
+		response.sendRedirect("login.jsp");
 		
 		
 	}

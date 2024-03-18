@@ -1,26 +1,45 @@
 package it.zgiovanni2003;
 
 import javax.crypto.Cipher;
-import javax.crypto.spec.SecretKeySpec;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
 public class Password_Manager {
     private static final String ALGORITHM = "AES";
-    private static final String KEY = "RzM0djFubjNUMnIyczExbnQ0bjM0abcd"; 
-    
+    private static SecretKey AES_KEY;
+
+    static {
+        AES_KEY = generateAESKey();
+    }
+
+    private static SecretKey generateAESKey() {
+        try {
+            KeyGenerator keyGen = KeyGenerator.getInstance("AES");
+            keyGen.init(256);
+            return keyGen.generateKey();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public static String encrypt(String password) throws Exception {
-        SecretKeySpec keySpec = new SecretKeySpec(KEY.getBytes(), ALGORITHM);
         Cipher cipher = Cipher.getInstance(ALGORITHM);
-        cipher.init(Cipher.ENCRYPT_MODE, keySpec);
+        cipher.init(Cipher.ENCRYPT_MODE, AES_KEY);
         byte[] encryptedBytes = cipher.doFinal(password.getBytes());
         return Base64.getEncoder().encodeToString(encryptedBytes);
     }
 
     public static String decrypt(String encryptedPassword) throws Exception {
-        SecretKeySpec keySpec = new SecretKeySpec(KEY.getBytes(), ALGORITHM);
         Cipher cipher = Cipher.getInstance(ALGORITHM);
-        cipher.init(Cipher.DECRYPT_MODE, keySpec);
+        cipher.init(Cipher.DECRYPT_MODE, AES_KEY);
         byte[] decryptedBytes = cipher.doFinal(Base64.getDecoder().decode(encryptedPassword));
         return new String(decryptedBytes);
+    }
+    
+    public SecretKey getKey(){
+    	return AES_KEY;
     }
 }

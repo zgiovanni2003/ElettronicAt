@@ -49,7 +49,8 @@ public class Password_Manager {
         return new String(decryptedBytes);
     }
     
-    public SecretKey getKey(){
-    	return AES_KEY;
+    public String getKey(){
+    	byte[] keyBytes = AES_KEY.getEncoded();
+    	return Base64.getEncoder().encodeToString(keyBytes);
     }
 }

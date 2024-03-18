@@ -11,10 +11,7 @@ import java.util.Base64;
 public class Password_Manager {
     private static final String ALGORITHM = "AES";
     private static SecretKey AES_KEY;
-
-    static {
-        AES_KEY = generateAESKey();
-    }
+    
 
     private static SecretKey generateAESKey() {
         try {
@@ -27,14 +24,15 @@ public class Password_Manager {
         }
     }
 
-    public static String encrypt(String password) throws Exception {
+    public String encrypt(String password) throws Exception {
+    	AES_KEY = generateAESKey();
         Cipher cipher = Cipher.getInstance(ALGORITHM);
         cipher.init(Cipher.ENCRYPT_MODE, AES_KEY);
         byte[] encryptedBytes = cipher.doFinal(password.getBytes());
         return Base64.getEncoder().encodeToString(encryptedBytes);
     }
     
-    public static String encrypt(String password, String KEY) throws Exception {
+    public String encrypt(String password, String KEY) throws Exception {
         SecretKeySpec keySpec = new SecretKeySpec(KEY.getBytes(), ALGORITHM);
         Cipher cipher = Cipher.getInstance(ALGORITHM);
         cipher.init(Cipher.ENCRYPT_MODE, keySpec);
@@ -44,7 +42,7 @@ public class Password_Manager {
     
     
 
-    public static String decrypt(String encryptedPassword) throws Exception {
+    public String decrypt(String encryptedPassword) throws Exception {
         Cipher cipher = Cipher.getInstance(ALGORITHM);
         cipher.init(Cipher.DECRYPT_MODE, AES_KEY);
         byte[] decryptedBytes = cipher.doFinal(Base64.getDecoder().decode(encryptedPassword));

@@ -49,11 +49,15 @@ public class Database_Manager {
     }
 
 
-    public ResultSet toGet(String query){
+    public ResultSet toGet(String query, String[] params){
         ResultSet result=null;
         try {
-            Statement state = connect.createStatement();
-            result = state.executeQuery(query);
+        	PreparedStatement statement = connect.prepareStatement(query);
+            
+            for (int i = 0; i < params.length; i++)
+                statement.setString(i + 1, params[i]);
+            
+            result = statement.executeQuery();
             
             
         } catch (SQLException e) {

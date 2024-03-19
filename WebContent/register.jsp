@@ -16,6 +16,6 @@
 		Password: <input type="password" name="password" required> <br>
 		<input type="submit" value="Registrati">
 	</form>
-	
+	Se sei registrato <a href="<%=request.getContextPath()%>/login.jsp">Accedi</a>
 </body>
 </html>

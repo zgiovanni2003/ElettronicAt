@@ -33,7 +33,8 @@ public class Password_Manager {
     }
     
     public String encrypt(String password, String KEY) throws Exception {
-        SecretKeySpec keySpec = new SecretKeySpec(KEY.getBytes(), ALGORITHM);
+    	byte[] keyBytes = Base64.getDecoder().decode(KEY);
+        SecretKeySpec keySpec = new SecretKeySpec(keyBytes, ALGORITHM);
         Cipher cipher = Cipher.getInstance(ALGORITHM);
         cipher.init(Cipher.ENCRYPT_MODE, keySpec);
         byte[] encryptedBytes = cipher.doFinal(password.getBytes());

@@ -12,7 +12,7 @@
   
 <servlet>
     <servlet-name>Register</servlet-name>
-    <servlet-class>it.zgiovanni2003.Register</servlet-class>
+    <servlet-class>it.zgiovanni2003.common.Register</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>Register</servlet-name>
@@ -21,7 +21,7 @@
 
 <servlet>
     <servlet-name>Login</servlet-name>
-    <servlet-class>it.zgiovanni2003.Login</servlet-class>
+    <servlet-class>it.zgiovanni2003.common.Login</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>Login</servlet-name>
@@ -30,7 +30,7 @@
 
 <servlet>
     <servlet-name>Logout</servlet-name>
-    <servlet-class>it.zgiovanni2003.Logout</servlet-class>
+    <servlet-class>it.zgiovanni2003.common.Logout</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>Logout</servlet-name>

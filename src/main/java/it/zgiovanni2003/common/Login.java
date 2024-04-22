@@ -44,7 +44,7 @@ public class Login extends HttpServlet {
 			if (resultSet.next()) {
 			     hash = resultSet.getString("hash");
 			     String pswHash = pm.encrypt(password, hash);
-			     System.out.println(pswHash);
+			     //System.out.println(pswHash);
 			     String temp = "SELECT `email`  FROM `utente` WHERE `email`= ? AND `password`= ?";
 			     String[] param= {email,pswHash};
 

@@ -6,7 +6,7 @@ public class Database_Manager {
     private String URL_mioDB;
     private String driver;
     private Connection connect;
-    Database_Manager(String URL_mioDB, String driver){
+    public Database_Manager(String URL_mioDB, String driver){
         this.URL_mioDB=URL_mioDB;
         this.driver=driver;
     }

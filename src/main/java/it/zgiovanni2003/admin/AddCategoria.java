@@ -36,11 +36,12 @@ public class AddCategoria extends HttpServlet {
         if (csrfTokenFromRequest != null && csrfTokenFromRequest.equals(csrfTokenFromSession)) {
         	String nome_categoria=request.getParameter("nome_categoria");
     		String query = "INSERT INTO `categorie` (`categoria_id`, `nome_categoria`)"
-    				+ " VALUES ('', ?)";
+    				+ " VALUES (NULL, ?)";
 
     		String[] params= {nome_categoria};
 
     		db.toPost(query, params);
+    		response.sendRedirect(request.getContextPath()+"admin/gest-categoria.jsp");
         } else {
             response.sendError(HttpServletResponse.SC_FORBIDDEN, "Token CSRF non valido");
         }

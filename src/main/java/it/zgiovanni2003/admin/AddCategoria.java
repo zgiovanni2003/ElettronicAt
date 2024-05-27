@@ -41,7 +41,7 @@ public class AddCategoria extends HttpServlet {
     		String[] params= {nome_categoria};
 
     		db.toPost(query, params);
-    		response.sendRedirect(request.getContextPath()+"admin/gest-categoria.jsp");
+    		response.sendRedirect(request.getContextPath()+"/admin/gest-categoria.jsp");
         } else {
             response.sendError(HttpServletResponse.SC_FORBIDDEN, "Token CSRF non valido");
         }

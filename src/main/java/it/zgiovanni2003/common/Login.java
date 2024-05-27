@@ -3,6 +3,7 @@ package it.zgiovanni2003.common;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -37,7 +38,7 @@ public class Login extends HttpServlet {
 		String query = "SELECT `hash` FROM `utente` WHERE `email`= ?";
 
 		String[] params= {email};
-
+		
 		ResultSet resultSet = db.toGet(query, params);
 		String hash=null;
 		try {
@@ -52,11 +53,16 @@ public class Login extends HttpServlet {
 					
 			     if(resultSet.next()) {
 			    	 HttpSession oldSession= request.getSession(false);
+			    	 List<CartItem> cartItems = null;
 						
-			    	 if(oldSession != null) oldSession.invalidate();
+			    	 if(oldSession != null) {
+			    		cartItems= (List<CartItem>) oldSession.getAttribute("cartItems");
+			    		 oldSession.invalidate();
+			    	 }
 						
 						HttpSession session= request.getSession();
 						session.setAttribute("email", email);
+						if (cartItems != null) session.setAttribute("cartItems", cartItems);
 						
 						response.sendRedirect("index.jsp");
 			     }

@@ -18,6 +18,9 @@
 	        <li class="nav-item">
 	          <a class="nav-link active" aria-current="page" href="<%=request.getContextPath()%>">Home</a>
 	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" aria-current="page" href="<%=request.getContextPath()%>/prodotti.jsp">Prodotti</a>
+	        </li>
 	      </ul>
 	      <ul class="navbar-nav ms-auto">
 	        <%
@@ -36,7 +39,7 @@
 			}
 			%>
 	        <li class="nav-item">
-	          <a class="nav-link" href="#">Carrello</a>
+	          <a class="nav-link" href="<%=request.getContextPath()%>/carrello.jsp">Carrello</a>
 	        </li>
 	      </ul>
 	    </div>

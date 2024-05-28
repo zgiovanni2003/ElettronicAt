@@ -68,6 +68,70 @@
     <url-pattern>/addProdotto</url-pattern>
 </servlet-mapping> 
 
+<servlet>
+    <servlet-name>SelectCategoria</servlet-name>
+    <servlet-class>it.zgiovanni2003.admin.SelectCategoria</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>SelectCategoria</servlet-name>
+    <url-pattern>/admin/selectCategoria</url-pattern>
+</servlet-mapping> 
+
+<servlet>
+    <servlet-name>DeleteCategoria</servlet-name>
+    <servlet-class>it.zgiovanni2003.admin.DeleteCategoria</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>DeleteCategoria</servlet-name>
+    <url-pattern>/admin/deleteCategoria</url-pattern>
+</servlet-mapping> 
+
+<servlet>
+    <servlet-name>SelectProdotti</servlet-name>
+    <servlet-class>it.zgiovanni2003.admin.SelectProdotti</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>SelectProdotti</servlet-name>
+    <url-pattern>/admin/selectProdotto</url-pattern>
+</servlet-mapping> 
+
+<servlet>
+    <servlet-name>DeleteProdotti</servlet-name>
+    <servlet-class>it.zgiovanni2003.admin.DeleteProdotti</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>DeleteProdotti</servlet-name>
+    <url-pattern>/admin/deleteProdotto</url-pattern>
+</servlet-mapping> 
+
+<servlet>
+    <servlet-name>AddToCart</servlet-name>
+    <servlet-class>it.zgiovanni2003.common.AddToCart</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>AddToCart</servlet-name>
+    <url-pattern>/addToCart</url-pattern>
+</servlet-mapping> 
+
+<servlet>
+    <servlet-name>DeleteToCart</servlet-name>
+    <servlet-class>it.zgiovanni2003.common.DeleteToCart</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>DeleteToCart</servlet-name>
+    <url-pattern>/deleteToCart</url-pattern>
+</servlet-mapping> 
+
+<servlet>
+    <servlet-name>ViewCart</servlet-name>
+    <servlet-class>it.zgiovanni2003.common.ViewCart</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ViewCart</servlet-name>
+    <url-pattern>/viewCart</url-pattern>
+</servlet-mapping>
+
+
 <error-page>
     <error-code>404</error-code>
     <location>/components/error404.jsp</location>

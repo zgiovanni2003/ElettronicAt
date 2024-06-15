@@ -23,16 +23,13 @@ import it.zgiovanni2003.model.Database_Manager;
 
 public class SelectProdotti extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	String driver="com.mysql.cj.jdbc.Driver";
-    String URL_mioDB="jdbc:mysql://localhost:3306/e-commerce";
-    Database_Manager db = new Database_Manager(URL_mioDB, driver); 
+	Database_Manager db = new Database_Manager();
     /**
      * @see HttpServlet#HttpServlet()
      */
     public SelectProdotti() {
         super();
-        db.connectDriver();
-        db.connect_DB("root", "");
+
         // TODO Auto-generated constructor stub
     }
 

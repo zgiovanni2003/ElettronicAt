@@ -131,6 +131,32 @@
     <url-pattern>/viewCart</url-pattern>
 </servlet-mapping>
 
+<servlet>
+    <servlet-name>NewOrdine</servlet-name>
+    <servlet-class>it.zgiovanni2003.common.NewOrdine</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>NewOrdine</servlet-name>
+    <url-pattern>/newOrdine</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>ViewOrdini</servlet-name>
+    <servlet-class>it.zgiovanni2003.common.ViewOrdini</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ViewOrdini</servlet-name>
+    <url-pattern>/viewOrdini</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>ViewOrdiniAdmin</servlet-name>
+    <servlet-class>it.zgiovanni2003.admin.ViewOrdiniAdmin</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ViewOrdiniAdmin</servlet-name>
+    <url-pattern>/admin/viewOrdiniAdmin</url-pattern>
+</servlet-mapping> 
 
 <error-page>
     <error-code>404</error-code>

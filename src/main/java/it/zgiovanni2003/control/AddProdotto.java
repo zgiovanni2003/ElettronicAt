@@ -1,4 +1,4 @@
-package it.zgiovanni2003.admin;
+package it.zgiovanni2003.control;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-import it.zgiovanni2003.common.Database_Manager;
+import it.zgiovanni2003.model.CsrfTokenManager;
+import it.zgiovanni2003.model.Database_Manager;
 
 /**
  * Servlet implementation class AddProdotto

@@ -1,4 +1,4 @@
-package it.zgiovanni2003.admin;
+package it.zgiovanni2003.model;
 
 import java.security.SecureRandom;
 import java.util.Base64;

@@ -1,4 +1,4 @@
-package it.zgiovanni2003.admin;
+package it.zgiovanni2003.control;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,7 +14,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-import it.zgiovanni2003.common.Database_Manager;
+import it.zgiovanni2003.model.Database_Manager;
 
 /**
  * Servlet implementation class ViewOrdini

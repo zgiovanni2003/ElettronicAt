@@ -1,4 +1,4 @@
-package it.zgiovanni2003.common;
+package it.zgiovanni2003.model;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;

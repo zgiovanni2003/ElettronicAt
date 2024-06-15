@@ -1,4 +1,4 @@
-package it.zgiovanni2003.common;
+package it.zgiovanni2003.model;
 
 public class CartItem {
 	private int productId;

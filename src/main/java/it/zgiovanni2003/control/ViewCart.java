@@ -1,4 +1,4 @@
-package it.zgiovanni2003.common;
+package it.zgiovanni2003.control;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,6 +15,9 @@ import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+
+import it.zgiovanni2003.model.CartItem;
+import it.zgiovanni2003.model.Database_Manager;
 
 /**
  * Servlet implementation class ViewCart

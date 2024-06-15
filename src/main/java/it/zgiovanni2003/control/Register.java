@@ -1,10 +1,13 @@
-package it.zgiovanni2003.common;
+package it.zgiovanni2003.control;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import it.zgiovanni2003.model.Database_Manager;
+import it.zgiovanni2003.model.Password_Manager;
 
 
 public class Register extends HttpServlet {

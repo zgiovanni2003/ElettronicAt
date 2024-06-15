@@ -1,11 +1,13 @@
-package it.zgiovanni2003.admin;
+package it.zgiovanni2003.control;
 
-import it.zgiovanni2003.common.Database_Manager;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import it.zgiovanni2003.model.CsrfTokenManager;
+import it.zgiovanni2003.model.Database_Manager;
 
 /**
  * Servlet implementation class AddCategoria

@@ -1,4 +1,4 @@
-package it.zgiovanni2003.common;
+package it.zgiovanni2003.control;
 
 import java.io.IOException;
 import java.util.List;
@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import it.zgiovanni2003.model.CartItem;
 
 public class DeleteToCart extends HttpServlet {
     private static final long serialVersionUID = 1L;

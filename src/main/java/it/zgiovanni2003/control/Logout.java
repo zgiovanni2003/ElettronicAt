@@ -1,4 +1,4 @@
-package it.zgiovanni2003.common;
+package it.zgiovanni2003.control;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

@@ -12,7 +12,7 @@
   
 <servlet>
     <servlet-name>Register</servlet-name>
-    <servlet-class>it.zgiovanni2003.common.Register</servlet-class>
+    <servlet-class>it.zgiovanni2003.control.Register</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>Register</servlet-name>
@@ -21,7 +21,7 @@
 
 <servlet>
     <servlet-name>Login</servlet-name>
-    <servlet-class>it.zgiovanni2003.common.Login</servlet-class>
+    <servlet-class>it.zgiovanni2003.control.Login</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>Login</servlet-name>
@@ -30,7 +30,7 @@
 
 <servlet>
     <servlet-name>Logout</servlet-name>
-    <servlet-class>it.zgiovanni2003.common.Logout</servlet-class>
+    <servlet-class>it.zgiovanni2003.control.Logout</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>Logout</servlet-name>
@@ -39,7 +39,7 @@
 
 <servlet>
     <servlet-name>AdminLogin</servlet-name>
-    <servlet-class>it.zgiovanni2003.admin.AdminLogin</servlet-class>
+    <servlet-class>it.zgiovanni2003.control.AdminLogin</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>AdminLogin</servlet-name>
@@ -48,7 +48,7 @@
 
 <servlet>
     <servlet-name>AddCategoria</servlet-name>
-    <servlet-class>it.zgiovanni2003.admin.AddCategoria</servlet-class>
+    <servlet-class>it.zgiovanni2003.control.AddCategoria</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>AddCategoria</servlet-name>
@@ -57,7 +57,7 @@
 
 <servlet>
     <servlet-name>AddProdotto</servlet-name>
-    <servlet-class>it.zgiovanni2003.admin.AddProdotto</servlet-class>
+    <servlet-class>it.zgiovanni2003.control.AddProdotto</servlet-class>
     <multipart-config>
         <max-file-size>10485760</max-file-size> <!-- 10 MB in bytes -->
         <max-request-size>20971520</max-request-size> <!-- 20 MB in bytes -->
@@ -70,7 +70,7 @@
 
 <servlet>
     <servlet-name>SelectCategoria</servlet-name>
-    <servlet-class>it.zgiovanni2003.admin.SelectCategoria</servlet-class>
+    <servlet-class>it.zgiovanni2003.control.SelectCategoria</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>SelectCategoria</servlet-name>
@@ -79,7 +79,7 @@
 
 <servlet>
     <servlet-name>DeleteCategoria</servlet-name>
-    <servlet-class>it.zgiovanni2003.admin.DeleteCategoria</servlet-class>
+    <servlet-class>it.zgiovanni2003.control.DeleteCategoria</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>DeleteCategoria</servlet-name>
@@ -88,7 +88,7 @@
 
 <servlet>
     <servlet-name>SelectProdotti</servlet-name>
-    <servlet-class>it.zgiovanni2003.admin.SelectProdotti</servlet-class>
+    <servlet-class>it.zgiovanni2003.control.SelectProdotti</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>SelectProdotti</servlet-name>
@@ -97,7 +97,7 @@
 
 <servlet>
     <servlet-name>DeleteProdotti</servlet-name>
-    <servlet-class>it.zgiovanni2003.admin.DeleteProdotti</servlet-class>
+    <servlet-class>it.zgiovanni2003.control.DeleteProdotti</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>DeleteProdotti</servlet-name>
@@ -106,7 +106,7 @@
 
 <servlet>
     <servlet-name>AddToCart</servlet-name>
-    <servlet-class>it.zgiovanni2003.common.AddToCart</servlet-class>
+    <servlet-class>it.zgiovanni2003.control.AddToCart</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>AddToCart</servlet-name>
@@ -115,7 +115,7 @@
 
 <servlet>
     <servlet-name>DeleteToCart</servlet-name>
-    <servlet-class>it.zgiovanni2003.common.DeleteToCart</servlet-class>
+    <servlet-class>it.zgiovanni2003.control.DeleteToCart</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>DeleteToCart</servlet-name>
@@ -124,7 +124,7 @@
 
 <servlet>
     <servlet-name>ViewCart</servlet-name>
-    <servlet-class>it.zgiovanni2003.common.ViewCart</servlet-class>
+    <servlet-class>it.zgiovanni2003.control.ViewCart</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>ViewCart</servlet-name>
@@ -133,7 +133,7 @@
 
 <servlet>
     <servlet-name>NewOrdine</servlet-name>
-    <servlet-class>it.zgiovanni2003.common.NewOrdine</servlet-class>
+    <servlet-class>it.zgiovanni2003.control.NewOrdine</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>NewOrdine</servlet-name>
@@ -142,7 +142,7 @@
 
 <servlet>
     <servlet-name>ViewOrdini</servlet-name>
-    <servlet-class>it.zgiovanni2003.common.ViewOrdini</servlet-class>
+    <servlet-class>it.zgiovanni2003.control.ViewOrdini</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>ViewOrdini</servlet-name>
@@ -151,7 +151,7 @@
 
 <servlet>
     <servlet-name>ViewOrdiniAdmin</servlet-name>
-    <servlet-class>it.zgiovanni2003.admin.ViewOrdiniAdmin</servlet-class>
+    <servlet-class>it.zgiovanni2003.control.ViewOrdiniAdmin</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>ViewOrdiniAdmin</servlet-name>

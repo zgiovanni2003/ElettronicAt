@@ -43,7 +43,7 @@ public class AddProdotto extends HttpServlet {
         	String prezzo=request.getParameter("prezzo");
         	String categoria_id=request.getParameter("categoria_id");
         	
-        	String uploadDir =request.getServletContext().getRealPath("");
+        	String uploadDir =request.getServletContext().getRealPath("images/load/");
 
             // Ottieni il file caricato
             Part filePart = request.getPart("file");
@@ -67,11 +67,10 @@ public class AddProdotto extends HttpServlet {
                 //response.getWriter().println("Il file non è stato caricato. Si prega di caricare un file con estensione .jsp.");
             }
         	
-        	
-    		String query = "INSERT INTO `prodotti` (`prodotto_id`, `nome_prodotto`, `descrizione`, `prezzo`, `img`, `categoria_id`) "
+            String query = "INSERT INTO `prodotti` (`prodotto_id`, `nome_prodotto`, `descrizione`, `prezzo`, `img`, `categoria_id`) "
     				+ "VALUES (NULL, ?, ?, ?, ?, ?)";
 
-    		String[] params= {nome_prodotto,descrizione,prezzo,filePath,categoria_id};
+    		String[] params= {nome_prodotto,descrizione,prezzo,fileName,categoria_id};
 
     		db.toPost(query, params);
         } else {

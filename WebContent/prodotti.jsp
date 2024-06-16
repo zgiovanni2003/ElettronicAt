@@ -42,7 +42,8 @@ $(document).ready(function() {
 	            $.each(data, function(index, item) {
 	            	var divCols= $('<div>').addClass('col');
 	                var card = $('<div>').addClass('card').css('width', '18rem');
-	                var img = $('<img>').addClass('card-img-top').attr('src', item.immagine_prodotto || 'placeholder.jpg').attr('alt', 'Card image cap');
+	                var imgSrc = '<%= request.getContextPath() %>/images/load/' + item.img;
+	                var img = $('<img>').addClass('card-img-top').attr('src', imgSrc).attr('alt', 'Card image cap');
 	                var cardBody = $('<div>').addClass('card-body');
 	                var cardTitle = $('<h5>').addClass('card-title').text(item.nome_prodotto);
 	                var cardText = $('<p>').addClass('card-text').text(item.descrizione);

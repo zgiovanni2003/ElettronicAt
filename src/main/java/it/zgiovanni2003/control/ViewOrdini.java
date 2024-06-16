@@ -44,10 +44,9 @@ public class ViewOrdini extends HttpServlet {
         
         
         String email = (String) session.getAttribute("email");
-        String query="SELECT `ordini`.`ordine_id`, `prodotti`.`nome_prodotto`, `ordini`.`data_ordine`, `ordini`.`prezzo_tot`, `ordini`.`quantità` "
+        String query="SELECT `ordini`.`ordine_id`, `ordini`.`nome_prodotto`, `ordini`.`data_ordine`, `ordini`.`prezzo_tot`, `ordini`.`quantità` "
 				+ "FROM `ordini` "
-				+ "LEFT JOIN `prodotti` ON `ordini`.`prodotto_id` = `prodotti`.`prodotto_id` "
-				+ "WHERE `ordini`.`prodotto_id` = `prodotti`.`prodotto_id` AND `ordini`.`email` = ?";
+				+ "WHERE `ordini`.`email` = ?";
         
         String[] params = {email};
         ResultSet resultSet = db.toGet(query, params);

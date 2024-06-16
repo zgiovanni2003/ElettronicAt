@@ -42,14 +42,15 @@ public class NewOrdine extends HttpServlet {
                 String id = Integer.toString(item.getProductId());
                 String qt = Integer.toString(item.getQuantity());
 
-                String query = "SELECT prodotti.prezzo FROM prodotti WHERE prodotti.prodotto_id = ?";
+                String query = "SELECT prodotti.prezzo, prodotti.nome_prodotto FROM prodotti WHERE prodotti.prodotto_id = ?";
                 String[] params = {id};
                 ResultSet resultSet = db.toGet(query, params);
                 double prezzo = 0.0;
-
+                String nome_prodotto = null;
                 try {
                     if (resultSet.next()) {
                         prezzo = resultSet.getDouble("prezzo");
+                        nome_prodotto = resultSet.getString("nome_prodotto");
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -57,9 +58,9 @@ public class NewOrdine extends HttpServlet {
 
                 String prezzo_f = Double.toString(prezzo * item.getQuantity());
 
-                String query2 = "INSERT INTO ordini (ordine_id, email, prodotto_id, data_ordine, prezzo_tot, quantità) "
-                        + "VALUES (NULL, ?, ?, DEFAULT, ?, ?)";
-                String[] params2 = {email, id, prezzo_f, qt};
+                String query2 = "INSERT INTO ordini (ordine_id, email, prodotto_id, nome_prodotto, data_ordine, prezzo_tot, quantità) "
+                        + "VALUES (NULL, ?, ?, ?, DEFAULT, ?, ?)";
+                String[] params2 = {email, id, nome_prodotto, prezzo_f, qt};
 
                 righe = db.toPost(query2, params2);
 

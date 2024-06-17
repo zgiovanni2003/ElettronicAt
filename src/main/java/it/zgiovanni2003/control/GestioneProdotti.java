@@ -39,6 +39,8 @@ public class GestioneProdotti extends HttpServlet {
         String action = request.getParameter("action");
         if ("select".equals(action)) {
             handleSelectProdotti(request, response);
+        }else if ("selectById".equals(action)) {
+            handleSelectProdottoById(request, response);
         }else if ("delete".equals(action)) {
             handleDeleteProdotto(request, response);
         }
@@ -76,9 +78,7 @@ public class GestioneProdotti extends HttpServlet {
 
     private void handleDeleteProdotto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
-        System.out.println("id= "+id);
         String url_img = prodottiDAO.getProdottoImg(id);
-        System.out.println("url= "+url_img);
         if (url_img != null) {
             File file = new File(url_img);
             file.delete();
@@ -112,4 +112,30 @@ public class GestioneProdotti extends HttpServlet {
         out.println(new Gson().toJson(jsonArray));
         out.close();
     }
+    
+    private void handleSelectProdottoById(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String id = request.getParameter("id");
+        Prodotto prodotto = prodottiDAO.getProdottoById(id);
+
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
+        Gson gson = new Gson();
+
+        if (prodotto != null) {
+            JsonObject jsonObject = new JsonObject();
+            jsonObject.addProperty("prodotto_id", prodotto.getProdottoId());
+            jsonObject.addProperty("nome_prodotto", prodotto.getNomeProdotto());
+            jsonObject.addProperty("descrizione", prodotto.getDescrizione());
+            jsonObject.addProperty("prezzo", prodotto.getPrezzo());
+            jsonObject.addProperty("img", prodotto.getImg());
+            jsonObject.addProperty("nome_categoria", prodotto.getNomeCategoria());
+
+            out.println(gson.toJson(jsonObject));
+        } else {
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+        }
+
+        out.close();
+    }
+
 }

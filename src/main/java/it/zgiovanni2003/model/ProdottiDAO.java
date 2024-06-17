@@ -67,6 +67,33 @@ public class ProdottiDAO {
         return null;
     }
 
+    
+    public Prodotto getProdottoById(String id) {
+        String query = "SELECT prodotti.prodotto_id, prodotti.nome_prodotto, prodotti.descrizione, prodotti.prezzo, prodotti.img, categorie.nome_categoria "
+                + "FROM prodotti LEFT JOIN categorie ON prodotti.categoria_id = categorie.categoria_id WHERE prodotti.prodotto_id = ?";
+        String[] params = { id };
+        ResultSet resultSet = db.toGet(query, params);
+        Prodotto prodotto = null;
+
+        try {
+            if (resultSet.next()) {
+                prodotto = new Prodotto(
+                        resultSet.getInt("prodotto_id"),
+                        resultSet.getString("nome_prodotto"),
+                        resultSet.getString("descrizione"),
+                        resultSet.getDouble("prezzo"),
+                        resultSet.getString("img"),
+                        resultSet.getString("nome_categoria")
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return prodotto;
+    }
+    
+    
     public int deleteProdotto(String id) {
         String query = "DELETE FROM prodotti WHERE prodotti.prodotto_id = ?";
         String[] params = { id };

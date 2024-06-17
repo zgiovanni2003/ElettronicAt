@@ -7,7 +7,7 @@ $(document).ready(function() {
 	    var conferma = confirm("Sei sicuro di voler elimir questo prodotto dal carrello?");
 	    if (conferma) {
 	        $.ajax({
-	            url: 'deleteToCart?id=' + id ,
+	            url: 'cart?action=delete&id=' + id ,
 	            type: 'GET',
 	            success: function(data) {
 	                // Aggiorna la tabella dopo l'aggiunta
@@ -23,7 +23,7 @@ $(document).ready(function() {
     // Funzione per aggiornare la tabella delle categorie
     function aggiornaTabellaProdotto() {
         $.ajax({
-            url: 'viewCart',
+            url: 'cart?action=view',
             type: 'GET',
             dataType: 'json',
             success: function(data) {

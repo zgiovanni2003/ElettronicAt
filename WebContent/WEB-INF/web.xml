@@ -118,6 +118,16 @@
     <servlet-name>GestioneProdotti</servlet-name>
     <url-pattern>/admin/prodotto</url-pattern>
 </servlet-mapping> 
+
+<servlet>
+    <servlet-name>GestioneCart</servlet-name>
+    <servlet-class>it.zgiovanni2003.control.GestioneCart</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>GestioneCart</servlet-name>
+    <url-pattern>/cart</url-pattern>
+</servlet-mapping> 
+
 <error-page>
     <error-code>404</error-code>
     <location>/components/error404.jsp</location>

@@ -16,7 +16,7 @@ $(document).ready(function() {
 	    var conferma = confirm("Sei sicuro di voler aggiungere questo prodotto?");
 	    if (conferma) {
 	        $.ajax({
-	            url: 'addToCart?id=' + id + '&quantity=1',
+	            url: 'cart?action=add&id=' + id + '&quantity=1',
 	            type: 'GET',
 	            success: function(data) {
 	                // Aggiorna la tabella dopo l'aggiunta

@@ -13,6 +13,23 @@
 </head>
 <body>
 	<%@ include file="components/header.jsp" %>
+	<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
+	
+    <div class="col-md-6 p-lg-5 mx-auto my-5">
+    <img alt="" class="img-fluid" src="images/in.jpg">
+      <h1 class="display-3 fw-bold">Progettato per creare</h1>
+      <h3 class="fw-normal text-muted mb-3">Costruisci tutto ciò che vuoi</h3>
+      <div class="d-flex gap-3 justify-content-center lead fw-normal">
+      
+        <a class="icon-link" href="prodotti.jsp">
+          Vedi i nostri prodotti
+          <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+  </div>
 	<%@ include file="components/footer.jsp" %>
 </body>
 </html>

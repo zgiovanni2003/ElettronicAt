@@ -46,7 +46,7 @@
 	document.addEventListener('DOMContentLoaded', function() {
 	    document.getElementById('typeEmailX-2').addEventListener('input', validateEmail);
 	    document.getElementById('typePasswordX-2').addEventListener('input', validatePassword);
-	    document.getElementById('login-form-admin').addEventListener('submit', function(event) {
+	    document.getElementById('login-form').addEventListener('submit', function(event) {
 		    // Previene il comportamento predefinito del form di inviare la richiesta
 		    event.preventDefault();
 		    

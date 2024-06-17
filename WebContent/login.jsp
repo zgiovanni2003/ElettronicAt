@@ -21,7 +21,7 @@
           <div class="card-body p-5 text-center">
 
             <h3 class="mb-5">Accedi</h3>
-            <form action="<%=request.getContextPath()%>/login" method="post">
+            <form id="login-form" action="<%=request.getContextPath()%>/login" method="post">
 	
 	            <div data-mdb-input-init class="form-outline mb-4">
 	              <input type="email" id="typeEmailX-2" class="form-control form-control-lg" name="email" required />

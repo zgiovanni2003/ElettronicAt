@@ -44,25 +44,31 @@
     }
   }
   
-    function validateDate() {
-    let date = document.getElementById('typeDate').value.trim();
-    let dateError = document.getElementById('date-error');
-    let datePattern = /^\d{1,2}-\d{1,2}-\d{4}$/;
+function validateDate() {
+  let inputDate = document.getElementById('typeDate').value.trim();
+  let dateError = document.getElementById('date-error');
+  let datePattern = /^(\d{2})\/(\d{2})\/(\d{4})$/;
 
-    if (date === '') {
-      dateError.innerText = 'Inserisci una data.';
-      dateError.classList.remove('d-none');
-      return false;
-    } else if (!datePattern.test(date)) {
-      dateError.innerText = 'Inserisci una data valida.';
-      dateError.classList.remove('d-none');
-      return false;
-    } else {
-      dateError.classList.add('d-none');
-      return true;
-    }
+  // Converti la data nel formato "dd/mm/yyyy" se proviene da un input type="date"
+  let dateParts = inputDate.split('-'); // Dividi la data per "-"
+  if (dateParts.length === 3) {
+    inputDate = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`; // Formato "dd/mm/yyyy"
   }
-  
+
+  if (inputDate === '') {
+    dateError.innerText = 'Inserisci una data.';
+    dateError.classList.remove('d-none');
+    return false;
+  } else if (!datePattern.test(inputDate)) {
+    dateError.innerText = 'Inserisci una data nel formato dd/mm/yyyy.';
+    dateError.classList.remove('d-none');
+    return false;
+  } else {
+    dateError.classList.add('d-none');
+    return true;
+  }
+}
+
 
   // Funzione per validare l'email con pattern
   function validateEmail() {

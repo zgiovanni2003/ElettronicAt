@@ -29,14 +29,14 @@
 	    <div class="card card-body" style="width: 300px;">
 	     	<form action="<%=request.getContextPath()%>/admin/prodotto?action=add" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="csrfToken" value="<%= CsrfTokenManager.generateCsrfToken(request) %>">
-				Nome <input type="text" name="nome_prodotto">
-				Descrizione <textarea rows="3" cols="5" name="descrizione"></textarea>
+				Nome <input type="text" name="nome_prodotto"><br>
+				Descrizione <textarea rows="3" cols="5" name="descrizione"></textarea><br>
 				Prezzo <input type="text" name="prezzo">
 				Categoria
 				<select id="select_categoria" name="categoria_id">
 				
-				</select>
-				Carica Immagine<input type="file" name="file" accept=".jpg">
+				</select><br>
+				Carica Immagine<input type="file" name="file" accept=".jpg"><br>
 				<input type="submit" value="Aggiungi">
 			</form>
 	    </div>

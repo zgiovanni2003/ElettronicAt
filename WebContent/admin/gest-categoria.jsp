@@ -17,6 +17,7 @@
 </head>
 <body>
 <%@ include file="components/header.jsp" %>
+<%if(session.getAttribute("admin-email")==null) response.sendRedirect(request.getContextPath()+"/admin/login.jsp"); %>
 	<div class="">
 	<br>  
 	<p>

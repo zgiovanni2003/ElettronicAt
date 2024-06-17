@@ -7,7 +7,7 @@ $(document).ready(function() {
         var conferma = confirm("Sei sicuro di voler eliminare questa categoria?");
         if (conferma) {
             $.ajax({
-                url: 'deleteCategoria?id=' + id ,
+                url: 'categoria?action=delete&id=' + id ,
                 type: 'GET',
                 success: function(data) {
                     // Aggiorna la tabella dopo l'eliminazione
@@ -23,7 +23,7 @@ $(document).ready(function() {
     // Funzione per aggiornare la tabella delle categorie
     function aggiornaTabellaCategorie() {
         $.ajax({
-            url: 'selectCategoria',
+            url: 'categoria?action=select',
             type: 'GET',
             dataType: 'json',
             success: function(data) {

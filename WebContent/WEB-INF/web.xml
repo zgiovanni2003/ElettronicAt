@@ -47,15 +47,6 @@
 </servlet-mapping> 
 
 <servlet>
-    <servlet-name>AddCategoria</servlet-name>
-    <servlet-class>it.zgiovanni2003.control.AddCategoria</servlet-class>
-</servlet>
-<servlet-mapping>
-    <servlet-name>AddCategoria</servlet-name>
-    <url-pattern>/addCategoria</url-pattern>
-</servlet-mapping> 
-
-<servlet>
     <servlet-name>AddProdotto</servlet-name>
     <servlet-class>it.zgiovanni2003.control.AddProdotto</servlet-class>
     <multipart-config>
@@ -68,23 +59,6 @@
     <url-pattern>/addProdotto</url-pattern>
 </servlet-mapping> 
 
-<servlet>
-    <servlet-name>SelectCategoria</servlet-name>
-    <servlet-class>it.zgiovanni2003.control.SelectCategoria</servlet-class>
-</servlet>
-<servlet-mapping>
-    <servlet-name>SelectCategoria</servlet-name>
-    <url-pattern>/admin/selectCategoria</url-pattern>
-</servlet-mapping> 
-
-<servlet>
-    <servlet-name>DeleteCategoria</servlet-name>
-    <servlet-class>it.zgiovanni2003.control.DeleteCategoria</servlet-class>
-</servlet>
-<servlet-mapping>
-    <servlet-name>DeleteCategoria</servlet-name>
-    <url-pattern>/admin/deleteCategoria</url-pattern>
-</servlet-mapping> 
 
 <servlet>
     <servlet-name>SelectProdotti</servlet-name>
@@ -159,7 +133,14 @@
 </servlet-mapping> 
 
 
-
+<servlet>
+    <servlet-name>GestioneCategoria</servlet-name>
+    <servlet-class>it.zgiovanni2003.control.GestioneCategoria</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>GestioneCategoria</servlet-name>
+    <url-pattern>/admin/categoria</url-pattern>
+</servlet-mapping> 
 
 <error-page>
     <error-code>404</error-code>

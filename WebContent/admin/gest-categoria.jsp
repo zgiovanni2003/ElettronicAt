@@ -27,7 +27,7 @@
 	<div style="min-height: 20px;">
 	  <div class="collapse collapse-horizontal" id="collapseWidthExample">
 	    <div class="card card-body" style="width: 300px;">
-	     	<form action="<%=request.getContextPath()%>/addCategoria" method="post">
+	     	<form action="<%=request.getContextPath()%>/admin/categoria?action=add" method="post">
 		        <input type="hidden" name="csrfToken" value="<%= CsrfTokenManager.generateCsrfToken(request) %>">
 		        Nome categoria:<input type="text" name="nome_categoria">
 		        <input type="submit" value="Aggiungi">

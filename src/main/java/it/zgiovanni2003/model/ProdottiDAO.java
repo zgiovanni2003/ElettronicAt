@@ -94,6 +94,19 @@ public class ProdottiDAO {
     }
     
     
+    public int updateProdotto(Prodotto prodotto) {
+        String query = "UPDATE prodotti SET nome_prodotto = ?, descrizione = ?, prezzo = ? WHERE prodotto_id = ?";
+        String[] params = { 
+            prodotto.getNomeProdotto(), 
+            prodotto.getDescrizione(), 
+            String.valueOf(prodotto.getPrezzo()), 
+            String.valueOf(prodotto.getProdottoId())
+        };
+        return db.toPost(query, params);
+    }
+
+    
+    
     public int deleteProdotto(String id) {
         String query = "DELETE FROM prodotti WHERE prodotti.prodotto_id = ?";
         String[] params = { id };

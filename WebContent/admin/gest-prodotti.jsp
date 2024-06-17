@@ -44,7 +44,8 @@
 	</div>
 	</div>
 
-
+	<div id="formContainer">
+	</div>
 	
 	
 	<div class="table-responsive">
@@ -55,6 +56,7 @@
 	                <th>Descrizione</th>
 	                <th>Prezzo</th>
 	                <th>Nome Categoria</th>
+	                <th>Modifica</th>
 	                <th>Elimina</th>
 	            </tr>
 	        </thead>

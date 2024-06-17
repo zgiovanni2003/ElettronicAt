@@ -32,7 +32,9 @@ public class GestioneProdotti extends HttpServlet {
         String action = request.getParameter("action");
         if ("add".equals(action)) {
             addProdotto(request, response);
-        } 
+        }else if ("update".equals(action)) {
+            handleUpdateProdotto(request, response);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -73,6 +75,23 @@ public class GestioneProdotti extends HttpServlet {
             }
         } else {
             response.sendError(HttpServletResponse.SC_FORBIDDEN, "Token CSRF non valido");
+        }
+    }
+    
+    private void handleUpdateProdotto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String prodottoId = request.getParameter("prodotto_id");
+        String nome_prodotto = request.getParameter("nome_prodotto");
+        String descrizione = request.getParameter("descrizione");
+        double prezzo = Double.parseDouble(request.getParameter("prezzo"));
+
+        Prodotto prodotto = new Prodotto(Integer.parseInt(prodottoId), nome_prodotto, descrizione, prezzo, null, null);
+        int rowsUpdated = prodottiDAO.updateProdotto(prodotto);
+
+        if (rowsUpdated > 0) {
+            response.setStatus(HttpServletResponse.SC_OK);
+            response.sendRedirect(request.getContextPath() + "/admin/gest-prodotti.jsp");
+        } else {
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Errore durante l'aggiornamento del prodotto");
         }
     }
 

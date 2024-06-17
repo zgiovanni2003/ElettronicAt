@@ -12,11 +12,11 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<script src="script/prodotti.js"></script>
+<script src="scripts/prodotti.js"></script>
 </head>
 <body>
 <%@ include file="components/header.jsp" %>
-
+<%if(session.getAttribute("admin-email")==null) response.sendRedirect(request.getContextPath()+"/admin/login.jsp"); %>
 	<div class="">
 	<br>  
 	<p>
@@ -27,7 +27,7 @@
 	<div style="min-height: 20px;">
 	  <div class="collapse " id="collapseWidthExample">
 	    <div class="card card-body" style="width: 300px;">
-	     	<form action="<%=request.getContextPath()%>/addProdotto" method="post" enctype="multipart/form-data">
+	     	<form action="<%=request.getContextPath()%>/admin/prodotto?action=add" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="csrfToken" value="<%= CsrfTokenManager.generateCsrfToken(request) %>">
 				Nome <input type="text" name="nome_prodotto">
 				Descrizione <textarea rows="3" cols="5" name="descrizione"></textarea>

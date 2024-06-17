@@ -32,7 +32,7 @@ $(document).ready(function() {
     // Funzione per aggiornare la tabella delle categorie
 	function aggiornaTabellaProdotto() {
 	    $.ajax({
-	        url: 'admin/selectProdotto',
+	        url: 'admin/prodotto?action=select',
 	        type: 'GET',
 	        dataType: 'json',
 	        success: function(data) {

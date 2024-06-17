@@ -47,38 +47,6 @@
 </servlet-mapping> 
 
 <servlet>
-    <servlet-name>AddProdotto</servlet-name>
-    <servlet-class>it.zgiovanni2003.control.AddProdotto</servlet-class>
-    <multipart-config>
-        <max-file-size>10485760</max-file-size> <!-- 10 MB in bytes -->
-        <max-request-size>20971520</max-request-size> <!-- 20 MB in bytes -->
-    </multipart-config>
-</servlet>
-<servlet-mapping>
-    <servlet-name>AddProdotto</servlet-name>
-    <url-pattern>/addProdotto</url-pattern>
-</servlet-mapping> 
-
-
-<servlet>
-    <servlet-name>SelectProdotti</servlet-name>
-    <servlet-class>it.zgiovanni2003.control.SelectProdotti</servlet-class>
-</servlet>
-<servlet-mapping>
-    <servlet-name>SelectProdotti</servlet-name>
-    <url-pattern>/admin/selectProdotto</url-pattern>
-</servlet-mapping> 
-
-<servlet>
-    <servlet-name>DeleteProdotti</servlet-name>
-    <servlet-class>it.zgiovanni2003.control.DeleteProdotti</servlet-class>
-</servlet>
-<servlet-mapping>
-    <servlet-name>DeleteProdotti</servlet-name>
-    <url-pattern>/admin/deleteProdotto</url-pattern>
-</servlet-mapping> 
-
-<servlet>
     <servlet-name>AddToCart</servlet-name>
     <servlet-class>it.zgiovanni2003.control.AddToCart</servlet-class>
 </servlet>
@@ -142,6 +110,14 @@
     <url-pattern>/admin/categoria</url-pattern>
 </servlet-mapping> 
 
+<servlet>
+    <servlet-name>GestioneProdotti</servlet-name>
+    <servlet-class>it.zgiovanni2003.control.GestioneProdotti</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>GestioneProdotti</servlet-name>
+    <url-pattern>/admin/prodotto</url-pattern>
+</servlet-mapping> 
 <error-page>
     <error-code>404</error-code>
     <location>/components/error404.jsp</location>
@@ -151,15 +127,6 @@
     <error-code>500</error-code>
     <location>/components/error500.jsp</location>
 </error-page>
-
-
-
-
-
-
-
-
-
 
 
 </web-app>

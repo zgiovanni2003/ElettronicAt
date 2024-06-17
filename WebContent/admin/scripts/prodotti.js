@@ -5,7 +5,7 @@ $(document).ready(function() {
 	
 	function loadCategoria(){
 		$.ajax({
-	        url: 'selectCategoria',
+	        url: 'categoria?action=select',
 	        type: 'GET',
 	        dataType: 'json', // Specifica il tipo di dati che ci si aspetta di ricevere
 	        success: function(data) {
@@ -29,7 +29,7 @@ $(document).ready(function() {
         var conferma = confirm("Sei sicuro di voler eliminare questo prodotto?");
         if (conferma) {
             $.ajax({
-                url: 'deleteProdotto?id=' + id ,
+                url: 'prodotto?action=delete&id=' + id ,
                 type: 'GET',
                 success: function(data) {
                     // Aggiorna la tabella dopo l'eliminazione
@@ -45,7 +45,7 @@ $(document).ready(function() {
     // Funzione per aggiornare la tabella delle categorie
     function aggiornaTabellaProdotto() {
         $.ajax({
-            url: 'selectProdotto',
+            url: 'prodotto?action=select',
             type: 'GET',
             dataType: 'json',
             success: function(data) {

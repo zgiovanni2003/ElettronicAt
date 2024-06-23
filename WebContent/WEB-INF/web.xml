@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <display-name>e-commerce</display-name>
+  <display-name>ElettronicAt</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
@@ -9,134 +9,116 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-  
-<servlet>
+  <servlet>
     <servlet-name>Register</servlet-name>
     <servlet-class>it.zgiovanni2003.control.Register</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>Register</servlet-name>
     <url-pattern>/register</url-pattern>
-</servlet-mapping> 
-
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>Login</servlet-name>
     <servlet-class>it.zgiovanni2003.control.Login</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>Login</servlet-name>
     <url-pattern>/login</url-pattern>
-</servlet-mapping> 
-
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>Logout</servlet-name>
     <servlet-class>it.zgiovanni2003.control.Logout</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>Logout</servlet-name>
     <url-pattern>/logout</url-pattern>
-</servlet-mapping> 
-
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>AdminLogin</servlet-name>
     <servlet-class>it.zgiovanni2003.control.AdminLogin</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>AdminLogin</servlet-name>
     <url-pattern>/adminLogin</url-pattern>
-</servlet-mapping> 
-
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>AddToCart</servlet-name>
     <servlet-class>it.zgiovanni2003.control.AddToCart</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>AddToCart</servlet-name>
     <url-pattern>/addToCart</url-pattern>
-</servlet-mapping> 
-
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>DeleteToCart</servlet-name>
     <servlet-class>it.zgiovanni2003.control.DeleteToCart</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>DeleteToCart</servlet-name>
     <url-pattern>/deleteToCart</url-pattern>
-</servlet-mapping> 
-
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>ViewCart</servlet-name>
     <servlet-class>it.zgiovanni2003.control.ViewCart</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>ViewCart</servlet-name>
     <url-pattern>/viewCart</url-pattern>
-</servlet-mapping>
-
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>NewOrdine</servlet-name>
     <servlet-class>it.zgiovanni2003.control.NewOrdine</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>NewOrdine</servlet-name>
     <url-pattern>/newOrdine</url-pattern>
-</servlet-mapping>
-
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>ViewOrdini</servlet-name>
     <servlet-class>it.zgiovanni2003.control.ViewOrdini</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>ViewOrdini</servlet-name>
     <url-pattern>/viewOrdini</url-pattern>
-</servlet-mapping>
-
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>ViewOrdiniAdmin</servlet-name>
     <servlet-class>it.zgiovanni2003.control.ViewOrdiniAdmin</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>ViewOrdiniAdmin</servlet-name>
     <url-pattern>/admin/viewOrdiniAdmin</url-pattern>
-</servlet-mapping> 
-
-
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>GestioneCategoria</servlet-name>
     <servlet-class>it.zgiovanni2003.control.GestioneCategoria</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>GestioneCategoria</servlet-name>
     <url-pattern>/admin/categoria</url-pattern>
-</servlet-mapping> 
-
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>GestioneProdotti</servlet-name>
     <servlet-class>it.zgiovanni2003.control.GestioneProdotti</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>GestioneProdotti</servlet-name>
     <url-pattern>/admin/prodotto</url-pattern>
-</servlet-mapping> 
-
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>GestioneCart</servlet-name>
     <servlet-class>it.zgiovanni2003.control.GestioneCart</servlet-class>
-</servlet>
-<servlet-mapping>
+  </servlet>
+  <servlet-mapping>
     <servlet-name>GestioneCart</servlet-name>
     <url-pattern>/cart</url-pattern>
-</servlet-mapping> 
-
-<error-page>
+  </servlet-mapping>
+  <error-page>
     <error-code>404</error-code>
     <location>/components/error404.jsp</location>
-</error-page>
-
-<error-page>
+  </error-page>
+  <error-page>
     <error-code>500</error-code>
     <location>/components/error500.jsp</location>
-</error-page>
-
-
+  </error-page>
 </web-app>

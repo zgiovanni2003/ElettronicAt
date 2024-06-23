@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<footer>
-		E-commerce Project TSW 2023-24
+	<footer class="footer mt-auto py-3 bg-body-tertiary">
+		Elettronic@ E-commerce Project TSW 2023-24
 	</footer>
 </body>
 </html>
